@@ -1,0 +1,49 @@
+﻿@baseUrl = http://127.0.0.1:3000
+
+### Rota inicial
+GET {{baseUrl}}/
+
+### Listar todos os livros
+GET {{baseUrl}}/livros
+
+### Criar livro
+POST {{baseUrl}}/livros
+Content-Type: application/json
+
+{
+  "titulo": "Livro de Teste HTTP",
+  "autor": "Autor de Teste",
+  "ano_publicacao": 2026,
+  "genero": "Teste"
+}
+
+### Buscar livro por ID
+GET {{baseUrl}}/livros/3
+### Atualizar livro por ID
+PUT {{baseUrl}}/livros/3
+Content-Type: application/json
+
+{
+  "titulo": "Livro Atualizado",
+  "autor": "Autor Atualizado",
+  "ano_publicacao": 2026,
+  "genero": "Atualizado"
+}
+
+### Emprestar livro
+PATCH {{baseUrl}}/livros/1/emprestar
+
+### Devolver livro
+PATCH {{baseUrl}}/livros/1/devolver
+
+### Deletar livro
+DELETE {{baseUrl}}/livros/1
+
+#### Listar livros por gênero
+GET {{baseUrl}}/livros?genero=romance
+
+###Listar livros disponíveis por gênero, um teste de filtro duplo
+GET {{baseUrl}}/livros?genero=romance&disponivel=true
+
+###Teste para notFoundHandler
+GET {{baseUrl}}/rota-errada
