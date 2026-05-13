@@ -59,9 +59,7 @@ api-biblioteca
 │   └── server.js
 │
 ├── tests
-│   ├── livros.http
-│   └── powershell
-│       └── livros-crud.ps1
+│   └── livros.http
 │
 ├── .env.example
 ├── .gitignore
